@@ -1,5 +1,6 @@
 #inspiring from from: https://towardsdatascience.com/using-weighted-k-means-clustering-to-determine-distribution-centres-locations-2567646fc31d
 #apresiasi dan t kasih disampaikan kpd Bp. Parawendy Indarjo, Data scientist at Bukalapak
+# source data ada di github repo, https://github.com/nasriaw/clustering-rice/blob/main/lokasi_desa.csv
 
 #1. baca source data
 df_desa = read.csv('/home/nasri/Dokumen/Belajar_komputer/bahasa_R/desa_kabmalang/running_R/lokasi_desa.csv')
@@ -169,8 +170,8 @@ df_kmeans_result = rbind.data.frame(df_desa_cluster, df_centroid)
 plot(df_kmeans_result$longitude[which(df_kmeans_result$cluster==1)],
      df_kmeans_result$latitude[which(df_kmeans_result$cluster==1)],
      col="violetred3",pch=19,
-     xlim = c(min(df_kmeans_result$longitude)-0.75,max(df_kmeans_result$longitude)+0.75), 
-     ylim=c(-11,-3),xlab = "longitude", ylab = "latitude",main = "Lokasi Pusat Klaster RMU hasil Perhitungan Weighted K-means")
+     xlim = c(min(df_kmeans_result$longitude)-0.1,max(df_kmeans_result$longitude)+0.1), 
+     ylim=c(-8.45,-7.6),xlab = "longitude", ylab = "latitude",main = "Lokasi Pusat Klaster RMU hasil Perhitungan Weighted K-means")
 points(df_kmeans_result$longitude[which(df_kmeans_result$cluster==2)],df_kmeans_result$latitude[which(df_kmeans_result$cluster==2)],col="cadetblue",pch=19)
 points(df_kmeans_result$longitude[which(df_kmeans_result$cluster==3)],df_kmeans_result$latitude[which(df_kmeans_result$cluster==3)],col="antiquewhite",pch=19)
 points(df_kmeans_result$longitude[which(df_kmeans_result$cluster==4)],df_kmeans_result$latitude[which(df_kmeans_result$cluster==4)],col="cadetblue1",pch=19)
