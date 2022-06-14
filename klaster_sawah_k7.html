@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Nasri" />
+
+<meta name="date" content="2022-06-13" />
+
+<title>3. Klaster Sawah, K-7</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">3. Klaster Sawah, K-7</h1>
+<h4 class="author">Nasri</h4>
+<h4 class="date">2022-06-13</h4>
+
+
+
+<div id="baca-source-data" class="section level2">
+<h2>1. baca source data</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;WriteXLS&quot;) </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>(<span class="st">&quot;elapse time for K = 7 : &quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_desa <span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">&#39;lokasi_desa.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## Rows: 390 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (2): desa, kec
+## dbl (3): longitude, latitude, luas_sawah_ha
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_desa)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   desa        longitude latitude luas_sawah_ha kec     
+##   &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;   
+## 1 Pondokagung      112.    -7.84           27  Kasembon
+## 2 Bayem            112.    -7.81          106. Kasembon
+## 3 Pait             112.    -7.80          164  Kasembon
+## 4 Wonoagung        112.    -7.78           79  Kasembon
+## 5 Kasembon         112.    -7.80          110. Kasembon
+## 6 Sukosari         112.    -7.78          220  Kasembon</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_desa)</span></code></pre></div>
+<pre><code>## [1] 390   5</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_desa[<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 5
+##   desa      longitude latitude luas_sawah_ha kec     
+##   &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;   
+## 1 Pait           112.    -7.80          164  Kasembon
+## 2 Wonoagung      112.    -7.78           79  Kasembon
+## 3 Kasembon       112.    -7.80          110. Kasembon
+## 4 Sukosari       112.    -7.78          220  Kasembon</code></pre>
+</div>
+<div id="function-haversine-distance" class="section level2">
+<h2>2.Function haversine distance</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>haversine_dist <span class="ot">=</span> <span class="cf">function</span>(point1, point2) { <span class="co">#each argument is a numeric vector with two elements (lon, lat)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  lon1 <span class="ot">=</span> point1[<span class="dv">1</span>] </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  lat1 <span class="ot">=</span> point1[<span class="dv">2</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  lon2 <span class="ot">=</span> point2[<span class="dv">1</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  lat2 <span class="ot">=</span> point2[<span class="dv">2</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  R <span class="ot">=</span> <span class="dv">6371000</span> <span class="co">#earth radius in meters</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  phi1 <span class="ot">=</span> lat1 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span> <span class="co">#convert to radian</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  phi2 <span class="ot">=</span> lat2 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span> <span class="co">#convert to radian</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  delta_phi <span class="ot">=</span> (lat2 <span class="sc">-</span> lat1) <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  delta_lambda <span class="ot">=</span> (lon2 <span class="sc">-</span> lon1) <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">=</span> (<span class="fu">sin</span>(delta_phi<span class="sc">/</span><span class="dv">2</span>))<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">cos</span>(phi1) <span class="sc">*</span> <span class="fu">cos</span>(phi2) <span class="sc">*</span> ((<span class="fu">sin</span>(delta_lambda<span class="sc">/</span><span class="dv">2</span>))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  c <span class="ot">=</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">atan2</span>(<span class="fu">sqrt</span>(a), <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>a))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  distance <span class="ot">=</span> R <span class="sc">*</span> c <span class="co">#haversine distance between point1 and point 2 in meters</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">round</span>(distance, <span class="dv">2</span>))</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="function-to-compute-total-sum-of-squares-error-sse" class="section level2">
+<h2>3.function to compute total sum of squares error, SSE</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">=</span> <span class="cf">function</span>(desa_df, clustering) { </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#desa_df is a dataframe with columns: desa name, longitude, latitude, luas_sawah_ha</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#clustering is vector of cluster assignment of desa</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#preparing argument</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>desa_longlat_mat <span class="ot">=</span> <span class="fu">as.matrix.data.frame</span>(desa_df[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(desa_longlat_mat) <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#compute centroid</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  centroid_long <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  centroid_lat <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">max</span>(clustering))) {</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    cluster_k <span class="ot">=</span> <span class="fu">which</span>(clustering <span class="sc">==</span> k) <span class="co">#desa index of cluster k</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    centroid_long[k] <span class="ot">=</span> <span class="fu">weighted.mean</span>(desa_df<span class="sc">$</span>longitude[cluster_k], desa_df<span class="sc">$</span>luas_sawah_ha[cluster_k])</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    centroid_lat[k] <span class="ot">=</span> <span class="fu">weighted.mean</span>(desa_df<span class="sc">$</span>latitude[cluster_k], desa_df<span class="sc">$</span>luas_sawah_ha[cluster_k])</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  mat_centroid <span class="ot">=</span> <span class="fu">cbind</span>(centroid_long, centroid_lat)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(mat_centroid) <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co">#compute SSE</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  sum_squares_err <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">max</span>(clustering))) {</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    cluster_k <span class="ot">=</span> <span class="fu">which</span>(clustering <span class="sc">==</span> k) <span class="co">#desa index of cluster k</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(cluster_k))) {</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)) { <span class="co">#long, lat</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>        square_err <span class="ot">=</span> (desa_longlat_mat[cluster_k[i],j] <span class="sc">-</span> mat_centroid[k,j])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        sum_squares_err <span class="ot">=</span> sum_squares_err <span class="sc">+</span> square_err</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(sum_squares_err)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="function-of-weighted_kmeans" class="section level2">
+<h2>4. function of weighted_kmeans</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>weighted_kmeans <span class="ot">=</span> <span class="cf">function</span>(df, K) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#df is a dataframe with columns: desa name, longitude, latitude, luas_sawah_ha (as weight)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#K is number of clusters desired</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#initialize containers</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  list_cluster <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  vect_sse <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#iterate algorithm 3 times (due to local minima)</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (iter <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) {</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">#initialization</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    init_centroids_index <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">nrow</span>(df),K)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    distance_matrix <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="cn">NA</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(df), <span class="at">ncol =</span> K)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    cluster <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    centroid_long <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    centroid_lat <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#compute distance between desa and initial centroids (haversine distance)</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>K)) {</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df))) {</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        desa_i <span class="ot">=</span> <span class="fu">as.numeric</span>(df[i,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        centroid_k <span class="ot">=</span> <span class="fu">as.numeric</span>(df[init_centroids_index[k],<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        distance_matrix[i,k] <span class="ot">=</span> <span class="fu">haversine_dist</span>(desa_i,centroid_k)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">#initial cluster assignment for each desa</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df))) {</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>      cluster[i] <span class="ot">=</span> <span class="fu">which.min</span>(distance_matrix[i,])</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">#iteration baseline</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    old_cluster <span class="ot">=</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">length</span>(cluster))</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    new_cluster <span class="ot">=</span> cluster</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#iterations</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (<span class="sc">!</span><span class="fu">all</span>(old_cluster <span class="sc">==</span> new_cluster)) {</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>      <span class="co">#update old cluster assignment</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>      old_cluster <span class="ot">=</span> new_cluster</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>      <span class="co">#calculate centroids (weighted average)</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>K)) {</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        cluster_k <span class="ot">=</span> <span class="fu">which</span>(old_cluster <span class="sc">==</span> k) <span class="co">#desa index of cluster k</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>        centroid_long[k] <span class="ot">=</span> <span class="fu">weighted.mean</span>(df<span class="sc">$</span>longitude[cluster_k], df<span class="sc">$</span>luas_sawah_ha[cluster_k])</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>        centroid_lat[k] <span class="ot">=</span> <span class="fu">weighted.mean</span>(df<span class="sc">$</span>latitude[cluster_k], df<span class="sc">$</span>luas_sawah_ha[cluster_k])</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>      df_centroid <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(centroid_long, centroid_lat))</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>      <span class="co">#compute distance between desa and centroids</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>K)) {</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df))) {</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>          desa_i <span class="ot">=</span> <span class="fu">as.numeric</span>(df[i,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>          centroid_k <span class="ot">=</span> <span class="fu">as.numeric</span>(df_centroid[k,])</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>          distance_matrix[i,k] <span class="ot">=</span> <span class="fu">haversine_dist</span>(desa_i,centroid_k)</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>      distance_matrix[i,k]</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>      <span class="co">#update cluster assignment for each desa</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df))) {</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>        cluster[i] <span class="ot">=</span> <span class="fu">which.min</span>(distance_matrix[i,])</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>      <span class="co">#update new_cluster</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>      new_cluster <span class="ot">=</span> cluster</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>    <span class="co">#algor iterations result</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>    list_cluster[[iter]] <span class="ot">=</span> cluster <span class="co">#cluster assignment</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>    vect_sse[iter] <span class="ot">=</span> <span class="fu">SSE</span>(df, cluster) <span class="co">#sum of squares error</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>  <span class="co">#function result</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>  best_iter <span class="ot">=</span> <span class="fu">which.min</span>(vect_sse)</span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_cluster[[best_iter]]) <span class="co">#best cluster assignment (smallest SSE)</span></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="find-the-optimal-k-using-elbow-method" class="section level2">
+<h2>5. find the optimal K using elbow method</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import library</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#initiate container</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>vect_see <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#fill vect_see via looping</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>K<span class="ot">=</span><span class="dv">7</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (K <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)) {</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  cluster_assignment <span class="ot">=</span> <span class="fu">weighted_kmeans</span>(df_desa, K)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  vect_see[K] <span class="ot">=</span> <span class="fu">SSE</span>(df_desa, cluster_assignment)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#create data frame to use ggplot</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>df_elbow <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">number_cluster =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">SSE =</span> vect_see[<span class="sc">-</span><span class="dv">1</span>]))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#plotting SSE decline over K (number of clusters)</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_elbow, <span class="fu">aes</span>(<span class="at">x =</span> number_cluster, <span class="at">y =</span> SSE)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&#39;skyblue&#39;</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">size =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#6. plotting clustering result and centroids</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;writexl&quot;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>K <span class="ot">=</span> <span class="dv">7</span> <span class="co">#optimal K from elbow method</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>cluster_assignment <span class="ot">=</span> <span class="fu">weighted_kmeans</span>(df_desa, K)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df_desa_cluster <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">longitude =</span> df_desa<span class="sc">$</span>longitude, <span class="at">latitude =</span> df_desa<span class="sc">$</span>latitude, <span class="at">cluster =</span> cluster_assignment))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_desa_cluster)</span></code></pre></div>
+<pre><code>##   longitude  latitude cluster
+## 1  112.3278 -7.840875       3
+## 2  112.3278 -7.810405       3
+## 3  112.3636 -7.797927       3
+## 4  112.3517 -7.778578       3
+## 5  112.3457 -7.804501       3
+## 6  112.3010 -7.778699       3</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(df_desa_cluster,<span class="st">&quot;lokasi_desa_cluster_k7.xlsx&quot;</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df_desa_cluster,<span class="st">&quot;lokasi_desa_cluster_k7.csv&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate centroids (weighted average)</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>centroid_long <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>centroid_lat <span class="ot">=</span> <span class="fu">vector</span>()</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>K)) {</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  cluster_k <span class="ot">=</span> <span class="fu">which</span>(cluster_assignment <span class="sc">==</span> k) <span class="co">#desa index of cluster k</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  centroid_long[k] <span class="ot">=</span> <span class="fu">weighted.mean</span>(df_desa<span class="sc">$</span>longitude[cluster_k], df_desa<span class="sc">$</span>luas_sawah_ha[cluster_k])</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  centroid_lat[k] <span class="ot">=</span> <span class="fu">weighted.mean</span>(df_desa<span class="sc">$</span>latitude[cluster_k], df_desa<span class="sc">$</span>luas_sawah_ha[cluster_k])</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">#create data frame for centroid with dummy cluster number </span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>df_centroid <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">longitude =</span> centroid_long, <span class="at">latitude =</span> centroid_lat, <span class="at">cluster =</span> <span class="fu">rep</span>(K, <span class="fu">length</span>(centroid_lat))))</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>df_centroid</span></code></pre></div>
+<pre><code>##   longitude  latitude cluster
+## 1  112.6365 -8.156079       7
+## 2  112.5184 -8.319431       7
+## 3  112.3930 -7.840012       7
+## 4  112.6362 -7.886307       7
+## 5  112.7295 -8.022488       7
+## 6  112.7783 -8.244633       7
+## 7  112.5342 -8.106990       7</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(df_centroid,<span class="st">&quot;lokasi_desa_centroid_cluster_k7.xlsx&quot;</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df_centroid,<span class="st">&quot;lokasi_desa_centroid_cluster_k7.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#append df_desa_cluster and df_centroid for ggplot</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>df_kmeans_result <span class="ot">=</span> <span class="fu">rbind.data.frame</span>(df_desa_cluster, df_centroid)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#df_kmeans_result</span></span></code></pre></div>
+</div>
+<div id="the-plot-clusters" class="section level2">
+<h2>6. the plot clusters</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">1</span>)],</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>     df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">1</span>)],</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;violetred3&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fu">min</span>(df_kmeans_result<span class="sc">$</span>longitude)<span class="sc">-</span><span class="fl">0.1</span>,<span class="fu">max</span>(df_kmeans_result<span class="sc">$</span>longitude)<span class="sc">+</span><span class="fl">0.1</span>), </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">8.45</span>,<span class="sc">-</span><span class="fl">7.6</span>),<span class="at">xlab =</span> <span class="st">&quot;longitude&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;latitude&quot;</span>,<span class="at">main =</span> <span class="st">&quot;Lokasi Klaster RMU hasil Perhitungan Weighted K-means, K=7&quot;</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">2</span>)],df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">2</span>)],<span class="at">col=</span><span class="st">&quot;cadetblue&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">3</span>)],df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">3</span>)],<span class="at">col=</span><span class="st">&quot;antiquewhite&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">4</span>)],df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">4</span>)],<span class="at">col=</span><span class="st">&quot;cadetblue1&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">5</span>)],df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">5</span>)],<span class="at">col=</span><span class="st">&quot;antiquewhite3&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">6</span>)],df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">6</span>)],<span class="at">col=</span><span class="st">&quot;violetred3&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(df_kmeans_result<span class="sc">$</span>longitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">7</span>)],df_kmeans_result<span class="sc">$</span>latitude[<span class="fu">which</span>(df_kmeans_result<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">7</span>)],<span class="at">col=</span><span class="st">&quot;cadetblue2&quot;</span>,<span class="at">pch=</span><span class="dv">19</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#centroids</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#points(df_kmeans_result$longitude[which(df_kmeans_result$cluster==6)],df_kmeans_result$latitude[which(df_kmeans_result$cluster==6)],col=&quot;black&quot;,pch=7)</span></span></code></pre></div>
+</div>
+<div id="waktu-eksekusi-program" class="section level1">
+<h1>7. Waktu eksekusi program</h1>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## elapse time for K = 7 : : 340.809 sec elapsed</code></pre>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
